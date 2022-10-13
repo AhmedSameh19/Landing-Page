@@ -7,8 +7,8 @@ const sections=Array.from(document.querySelectorAll("section"));
 //Making the navigation bar
 function navBar(){
     for(sec of sections){
-        Li=document.createElement("li");
-        Li.innerHTML=`<a href="#${sec.id}" class="menu__link" data-nav="${sec.id}">${sec.dataset.nav}</a>`;
+        var Li=document.createElement("li");
+        Li.innerHTML=`<a href="#${sec.id}" class="menu__link " data-nav="${sec.id}">${sec.dataset.nav}</a>`;
         console.log(Li)
         navList.appendChild(Li);
     }
@@ -26,4 +26,15 @@ window.onscroll=function(){
     });
 }
 
+//adding smoot scroll to the section clicked 
+navList.addEventListener("click",(sec)=>{
+    sec.preventDefault();
+    var location=document.getElementById(`${sec.target.dataset.nav}`);
+    console.log(location)
+    location.scrollIntoView(
+        {behavior: "smooth", 
+        block: "end", 
+        inline: "nearest"}
+        );
+})
  
