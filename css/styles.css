@@ -208,9 +208,9 @@ section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
-.link-active{
-    background-color: greenyellow;
-    color: #333;
+.menu__link.link-active{
+    background-color: rgb(53, 58, 64);
+    color: #57be77;
 }
 
 /* Section Active Styles Keyframe Animations */
